@@ -1,0 +1,13 @@
+apiVersion: "extensions/v1beta1"
+kind: "Ingress"
+metadata:
+  name: "general-ingress"
+  namespace: "development"
+spec:
+  rules:  
+  - http:
+      paths:
+      - path: "a/DevOps/*"
+        backend:
+          serviceName: "server1-service"
+          servicePort: 80

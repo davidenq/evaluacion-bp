@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: server2-config
+  namespace: development
+data:
+  NAME_SERVER: server2

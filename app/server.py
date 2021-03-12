@@ -3,8 +3,16 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello():
-    return "Hello punto"
+def main():
+    return "Hola desde servidor 1"
+
+@app.route('/health')
+def health():
+    return "ok"
+
+@app.route('/server1/DevOps')
+def serverDevOps():
+    return "Esto es un nuevo endpoint"
 
 @app.route('/DevOps')
 def devops():
