@@ -19,6 +19,7 @@ jobs:
         run: docker push ${{ secrets.DOCKER_USERNAME }}/${{ secrets.APP_NAME }}:${{ github.sha }}
 
   deploy-on-k8s:
+    needs: build-and-publish
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
