@@ -7,7 +7,8 @@ spec:
   rules:  
   - http:
       paths:
-      - path: "a/DevOps/*"
+      - path: "/"
         backend:
           serviceName: "server1-service"
           servicePort: 80
+    host: recursivo.io

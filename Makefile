@@ -1,8 +1,12 @@
 build:
-	sh ./scripts/build.sh
+	sh ./scripts/docker/build.sh
 run:
-	sh ./scripts/run.sh
+	sh ./scripts/docker/run.sh
 publish:
-	sh ./scripts/publish.sh
+	sh ./scripts/docker/publish.sh
 deploy:
-	kubectl apply -f ./infra/deployments/server1/deployment.yml
+	sh ./scripts/k8s/deployment.sh
+create-infra:
+	sh ./scripts/k8s/namespace.sh
+	sh ./scripts/k8s/deployment.sh
+	sh ./scripts/k8s/ingress.sh
