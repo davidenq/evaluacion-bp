@@ -4,7 +4,11 @@
 kubectl apply -f ./infra/deployments/app/configmap.yml
 
 # create deployment
-kubectl apply -f ./infra/deployments/app/deployment.yml
+DEVPATH=./infra/deployments/app/deployment.yml
+
+awk -v envhash=${github.sha} '{gsub(/HASH/, envhash);print}' $DEVPATH >> temp.yml
+kubectl apply -f ./temp.yml
+rm -rf ./temp.yml
 
 # create service
 kubectl apply -f ./infra/deployments/app/services.yml
