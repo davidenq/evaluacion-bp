@@ -19,5 +19,5 @@ spec:
         envFrom:
           - configMapRef:
               name: server1-config
-        image: registry.hub.docker.com/davidenq/evaluacion-bp:latest
+        image: registry.hub.docker.com/davidenq/evaluacion-bp
         
