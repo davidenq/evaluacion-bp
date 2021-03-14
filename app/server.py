@@ -2,19 +2,15 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods = ['GET'])
 def main():
-    return "Hi from server 1, version 0"
+    return "ok"
 
-@app.route('/health')
+@app.route('/health', methods = ['GET'])
 def health():
     return "ok"
 
-@app.route('/server1/DevOps')
-def serverDevOps():
-    return "Esto es un nuevo endpoint"
-
-@app.route('/DevOps')
+@app.route('/DevOps', methods = ['POST'])
 def devops():
     return "Esto es un nuevo endpoint"
 
