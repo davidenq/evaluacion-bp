@@ -12,7 +12,14 @@ def health():
 
 @app.route('/DevOps', methods = ['POST'])
 def devops():
-    return "Esto es un nuevo endpoint"
+    content = request.json
+    message = "Hello " + content['to'] + "your message will be send"
+    return jsonify({'message' : message}), 200
+
+
+@app.errorhandler(405)
+def method_not_allowed(e):
+    return "error" 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
