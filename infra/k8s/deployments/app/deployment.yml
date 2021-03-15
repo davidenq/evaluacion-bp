@@ -19,4 +19,4 @@ spec:
         envFrom:
           - configMapRef:
               name: server1-config
-        image: registry.hub.docker.com/davidenq/evaluacion-bp:HASH
+        image: registry.hub.docker.com/pcamacho7/test-bp:HASH

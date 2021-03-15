@@ -1,3 +1,2 @@
 #!/bin/bash
-
-docker build --compress --force-rm --rm --tag davidenq/evaluacion-bp:0.3.0 .
+docker build --compress --force-rm --rm --tag pcamacho7/test-bp:0.3.0 .
