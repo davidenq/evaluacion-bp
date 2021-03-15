@@ -3,7 +3,7 @@
 ## Informacion importante
 
 ### Servicios utilizaos
-- Google Api Gateway
+- Google Api Gateway.
 - Google Kubernetes Engine
 - Google Credentials
 - Github
