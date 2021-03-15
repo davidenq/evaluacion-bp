@@ -22,7 +22,8 @@ def devops():
 
 @app.errorhandler(405)
 def method_not_allowed(e):
-    return "error" 
+    return "error"
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
