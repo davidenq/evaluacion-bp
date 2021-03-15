@@ -1,4 +1,3 @@
 
 #!/bin/bash
-
- docker push davidenq/evaluacion-bp:0.3.0
+ docker push pcamacho7/test-bp:0.3.0
