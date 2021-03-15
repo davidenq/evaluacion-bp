@@ -1,6 +1,8 @@
 from server import app
 from flask import json
 
+# code based on https://riptutorial.com/flask/example/5622/testing-a-json-api-implemented-in-flask
+
 def test_add():        
     response = app.test_client().post(
         '/DevOps',
