@@ -8,7 +8,7 @@ DEVPATH=./infra/k8s/deployments/app/deployment.yml
 
 awk -v envhash=$SHA '{gsub(/HASH/, envhash);print}' $DEVPATH >> temp.yml
 sleep 10
-kubectl apply -f ./temp.yml
+#kubectl apply -f ./temp.yml
 rm -rf ./temp.yml
 
 # create service
