@@ -1,14 +1,15 @@
 #!/bin/bash
 
 # create configmap
-kubectl apply -f ./infra/deployments/app/configmap.yml
+kubectl apply -f ./infra/k8s/deployments/app/configmap.yml
 
 # create deployment
-DEVPATH=./infra/deployments/app/deployment.yml
+DEVPATH=./infra/k8s/deployments/app/deployment.yml
 
 awk -v envhash=$SHA '{gsub(/HASH/, envhash);print}' $DEVPATH >> temp.yml
+sleep 10
 kubectl apply -f ./temp.yml
 rm -rf ./temp.yml
 
 # create service
-kubectl apply -f ./infra/deployments/app/services.yml
+kubectl apply -f ./infra/k8s/deployments/app/services.yml

@@ -1,2 +1,6 @@
 spec.yaml
 variables.tf
+__pycache__*
+.pytest_cache*
+.terraform*
+terraform.*

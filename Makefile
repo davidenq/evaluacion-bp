@@ -1,18 +1,21 @@
-build:
-	sh ./scripts/docker/build.sh
-run:
-	sh ./scripts/docker/run.sh
-publish:
-	sh ./scripts/docker/publish.sh
+test:
+	pytest ./app/test_server.py
+
 deploy:
 	sh ./scripts/k8s/deployment.sh
-create-infra:
-	# creating google api-gateway
-	sh ./scripts/api-gateway/create.sh
 
-	# sh ./scripts/k8s/namespace.sh
-	# sh ./scripts/k8s/deployment.sh
-	# sh ./scripts/k8s/ingress.sh
+create-k8s-cluster:
+	sh ./scripts/k8s/create-cluster.sh
+
+create-deployments:
+	sh ./scripts/k8s/namespace.sh
+	sh ./scripts/k8s/deployment.sh
+	sh ./scripts/k8s/ingress.sh
+
+
+
+create-api-gateway:
+		sh ./scripts/api-gateway/create.sh
 
 delete-api-gateway:
 	sh ./scripts/api-gateway/delete.sh

@@ -1,2 +1,2 @@
 #!/bin/bash
-kubectl apply -f ./infra/ingress/service.yml
+kubectl apply -f ./infra/k8s/ingress/service.yml
