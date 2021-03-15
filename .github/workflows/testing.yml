@@ -3,7 +3,26 @@ on:
   push:
     branches: [ main ]
 jobs:
+  # code taken from https://docs.github.com/es/actions/guides/building-and-testing-python
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install Flask
+      - name: Test with pytest
+        run: |
+          pip install pytest
+          make test
+    
   build-and-publish:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
